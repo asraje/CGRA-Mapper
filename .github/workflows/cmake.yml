@@ -1,0 +1,125 @@
+name: build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install CMAKE LLVM-21 and Clang
+      run: |
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 21
+        sudo apt-get -y update
+        sudo apt-get -y install cmake
+        sudo apt-get -y install llvm-21 llvm-21-dev llvm-21-tools clang-21
+        sudo apt-get -y install build-essential
+        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-21 100
+        sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-21 100
+        sudo update-alternatives --install /usr/bin/llvm-dis llvm-dis /usr/bin/llvm-dis-21 100
+        sudo update-alternatives --install /usr/bin/opt opt /usr/bin/opt-21 100
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install eventlet pandas matplotlib
+
+    - name: Configure CMake
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: mkdir build && cd build && cmake ..
+
+    - name: Build
+      working-directory: ${{github.workspace}}/build
+      # Build your program with the given configuration
+      run: make
+
+    # Testing.
+    - name: Test fusion via Nonlinear kernel
+      working-directory: ${{github.workspace}}/test/nonlinear
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test split via Idiv kernel
+      working-directory: ${{github.workspace}}/test/idiv
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test DVFS
+      working-directory: ${{github.workspace}}/test/dvfs
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test inter edges
+      working-directory: ${{github.workspace}}/test/inter_edge
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test expandable mapping
+      working-directory: ${{github.workspace}}/test/expandable
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test Control Flow
+      working-directory: ${{github.workspace}}/test/ctrl_flow
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test Early Exit
+      working-directory: ${{github.workspace}}/test/early_exit
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+
+    - name: Test multi-cyle mapping
+      working-directory: ${{github.workspace}}/test/multicycle
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test vectorized node
+      working-directory: ${{github.workspace}}/test/vector
+      run: |
+        sh compile.sh
+        sh run.sh
+        sh verify.sh
+
+    - name: Test expandable automatic script
+      working-directory: ${{github.workspace}}/tools/expandable
+      run: |
+        ./demo.sh --test y

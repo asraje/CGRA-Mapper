@@ -1,0 +1,1 @@
+clang -emit-llvm -O3 -fno-unroll-loops -fno-vectorize -o idiv_test.bc -c idiv_test.cpp

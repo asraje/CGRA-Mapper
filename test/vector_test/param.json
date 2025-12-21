@@ -1,0 +1,32 @@
+{
+    "kernel"                : "kernel",
+    "targetFunction"        : false,
+    "targetNested"          : false,
+    "targetLoopsID"         : [0],
+    "doCGRAMapping"         : true,
+    "row"                   : 4,
+    "column"                : 4,
+    "precisionAware"        : false,
+    "fusionStrategy"        : [],
+    "isTrimmedDemo"         : true,
+    "heuristicMapping"      : true,
+    "parameterizableCGRA"   : false,
+    "vectorizationMode"     : "all",
+    "bypassConstraint"      : 4,
+    "isStaticElasticCGRA"   : false,
+    "ctrlMemConstraint"     : 10,
+    "regConstraint"         : 8,
+    "incrementalMapping"    : false,
+    "vectorFactorForIdiv "  : 1,
+    "testingOpcodeOffset"   : 0,
+    "optLatency"            : {
+                                "load" : 2,
+                                "store": 2,
+                                "div" : 4
+                              },
+    "optPipelined"          : ["load", "store", "div"],
+    "additionalFunc"        : {
+                                "load" : [0,1,2,3],
+                                "store": [0,1,2,3]
+                              }
+  }
