@@ -1,1 +1,1 @@
-opt-12 -load ../../build/src/libmapperPass.so -mapperPass idiv_test.bc
+opt-21 --load-pass-plugin=../../build/src/libmapperPass.so --passes="mapperPass" idiv_test.bc

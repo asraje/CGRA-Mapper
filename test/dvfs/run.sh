@@ -1,1 +1,1 @@
-opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc | tee trace.log
+opt-21 --load-pass-plugin=../../build/src/libmapperPass.so --passes="mapperPass" kernel.bc | tee trace.log

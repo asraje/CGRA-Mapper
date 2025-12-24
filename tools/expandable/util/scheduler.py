@@ -99,11 +99,11 @@ class Kernel:
             self.unroll_factor = 1
 
         if self.unroll_factor == 1 and self.vector_factor == 1:
-            compile_command = f"clang-12 -emit-llvm -fno-unroll-loops -fno-vectorize -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{file_source}/{self.kernel_name}"
+            compile_command = f"clang-21 -emit-llvm -fno-unroll-loops -fno-vectorize -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{file_source}/{self.kernel_name}"
         elif self.unroll_factor == 1 and self.vector_factor != 1:
-            compile_command = f"clang-12 -emit-llvm -fno-unroll-loops -O3 -mllvm -force-vector-width={self.vector_factor} -o kernel.bc -c {KERNEL_DIRECTORY}/{file_source}/{self.kernel_name}"
+            compile_command = f"clang-21 -emit-llvm -fno-unroll-loops -O3 -mllvm -force-vector-width={self.vector_factor} -o kernel.bc -c {KERNEL_DIRECTORY}/{file_source}/{self.kernel_name}"
         elif self.unroll_factor != 1 and self.vector_factor == 1:
-            compile_command = f"clang-12 -emit-llvm -funroll-loops -mllvm -unroll-count={self.unroll_factor} -fno-vectorize -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{file_source}/{self.kernel_name}"
+            compile_command = f"clang-21 -emit-llvm -funroll-loops -mllvm -unroll-count={self.unroll_factor} -fno-vectorize -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{file_source}/{self.kernel_name}"
         else:
             # print("Error, invalid unroll and vector factor combination.")
             return
@@ -111,7 +111,7 @@ class Kernel:
         compile_proc = subprocess.Popen([compile_command, '-u'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         (compile_out, compile_err) = compile_proc.communicate()
 
-        disassemble_command = f"llvm-dis-12 kernel.bc -o kernel.ll"
+        disassemble_command = f"llvm-dis-21 kernel.bc -o kernel.ll"
         disassemble_proc = subprocess.Popen([disassemble_command, '-u'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         (disassemble_out, disassemble_err) = disassemble_proc.communicate()
 
@@ -144,7 +144,7 @@ class Kernel:
 
         Returns: NULL
         """
-        get_map_command = f"opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc"
+        get_map_command = f'opt-21 --load-pass-plugin=../../build/src/libmapperPass.so --passes="mapperPass" kernel.bc'
         gen_map_proc = subprocess.Popen([get_map_command, "-u"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         dataS = []    # for get results from subprocess and output to pandas
         kernels_source = (self.kernel_name.split("."))[0]
@@ -190,7 +190,7 @@ class Kernel:
 
         Returns: NULL
         """
-        get_map_command = f"opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc"
+        get_map_command = f'opt-21 --load-pass-plugin=../../build/src/libmapperPass.so --passes="mapperPass" kernel.bc'
         gen_map_proc = subprocess.Popen([get_map_command, "-u"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         # Holds the results from subprocess and output to pandas.
         dataS = []

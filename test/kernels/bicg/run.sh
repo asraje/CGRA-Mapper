@@ -1,1 +1,1 @@
-opt-12 -load ../../../cgra-mapper/build/src/libmapperPass.so -mapperPass kernel.bc
+opt-21 --load-pass-plugin=../../../cgra-mapper/build/src/libmapperPass.so --passes="mapperPass" kernel.bc

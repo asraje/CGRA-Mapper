@@ -20,15 +20,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install CMAKE LLVM-12 and Clang
+    - name: Install CMAKE LLVM-21 and Clang
       run: |
-        dpkg -l | grep llvm
-        sudo apt-get purge llvm-13
-        sudo apt-get purge llvm-14
-        sudo apt-get purge llvm-15
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 21
         sudo apt-get -y update
         sudo apt-get -y install cmake
-        sudo apt-get -y install llvm-12 llvm-12-dev llvm-12-tools clang-12
+        sudo apt-get -y install llvm-21 llvm-21-dev llvm-21-tools clang-21
         sudo apt-get -y install build-essential
 
     - name: Set up Python

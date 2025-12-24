@@ -55,16 +55,16 @@ def DVFSComp(fileName, uFactor):
     fileSource = (fileName.split("."))[0]
 
     if uFactor == 1:
-        compileCommand = f"clang-12 -emit-llvm -fno-unroll-loops -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{fileSource}/{fileName}"
+        compileCommand = f"clang-21 -emit-llvm -fno-unroll-loops -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{fileSource}/{fileName}"
     elif uFactor == 2:
-        compileCommand = f"clang-12 -emit-llvm -funroll-loops -mllvm -unroll-count={uFactor} -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{fileSource}/{fileName}"
+        compileCommand = f"clang-21 -emit-llvm -funroll-loops -mllvm -unroll-count={uFactor} -O3 -o kernel.bc -c {KERNEL_DIRECTORY}/{fileSource}/{fileName}"
     else:
         print(f"Error: Invalid unroll factor value {uFactor}.")
 
     compileProc = subprocess.Popen([compileCommand, '-u'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     (compileOut, compileErr) = compileProc.communicate()
 
-    disassembleCommand = "llvm-dis-12 kernel.bc -o kernel.ll"
+    disassembleCommand = "llvm-dis-21 kernel.bc -o kernel.ll"
     disassembleProc = subprocess.Popen(
         [disassembleCommand, '-u'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     (disassembleOut, disassembleErr) = disassembleProc.communicate()
@@ -99,7 +99,7 @@ def DVFSMap(kernel,df):
 
     Returns: NULL
     """
-    getMapCommand = "opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc"
+    getMapCommand = 'opt-21 --load-pass-plugin=../../build/src/libmapperPass.so --passes="mapperPass" kernel.bc'
     genMapProc = subprocess.Popen([getMapCommand, "-u"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     dataS = []    # for get results from subprocess and output to pandas
     kernelsSource = (kernel.split("."))[0]
@@ -149,7 +149,7 @@ def DVFSGen(kernel, df):
 
     Returns: NULL
     """
-    getMapCommand = "opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc"
+    getMapCommand = 'opt-21 --load-pass-plugin=../../build/src/libmapperPass.so --passes="mapperPass" kernel.bc'
     genMapProc = subprocess.Popen([getMapCommand, "-u"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     # Holds the results from subprocess and output to pandas.
     dataS = []

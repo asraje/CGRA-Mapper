@@ -2,7 +2,7 @@
 origin_mapping_ii=$(grep -aoP '\[Mapping II: \K[^]]+' trace.log)
 # ctrl_flow test
 sed -i 's/\("fusionStrategy"[[:space:]]*:[[:space:]]*\)\[\]/\1["ctrl_flow"]/' param.json
-opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc | tee trace.log
+opt-21 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc | tee trace.log
 phiaddcmpbr=$(grep -o 'phiaddcmpbr' dfg.json | wc -l) # pattern input of combineForIter
 phiadd=$(grep -o '\bphiadd\b' dfg.json | wc -l) # pattern fused by combineForUnroll
 fused_mapping_ii=$(grep -aoP '\[Mapping II: \K[^]]+' trace.log)

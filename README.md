@@ -95,8 +95,8 @@ Build
 
 The mapper requires the following additional prerequisites:
 
- - LLVM 12.0
- - CMAKE 3.1
+ - LLVM 21.0
+ - CMAKE 3.20
 
 ```
  $ mkdir build

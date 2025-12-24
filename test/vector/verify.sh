@@ -1,8 +1,8 @@
 # original test
 vaddOrigin=$(grep -o 'vadd' dfg.json | wc -l)
 # vector test
-clang-12 -emit-llvm -O3 -fno-unroll-loops -O3 -mllvm -force-vector-width=4 -o kernel.bc -c conv.c
-opt-12 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc
+clang-21 -emit-llvm -O3 -fno-unroll-loops -O3 -mllvm -force-vector-width=4 -o kernel.bc -c conv.c
+opt-21 -load ../../build/src/libmapperPass.so -mapperPass kernel.bc
 vadd=$(grep -o 'vadd' dfg.json | wc -l)
 vload=$(grep -o 'vload' dfg.json | wc -l)
 vmul=$(grep -o 'vmul' dfg.json | wc -l)

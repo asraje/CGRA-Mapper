@@ -10,7 +10,16 @@
  */
 
 #include <fstream>
+#include <algorithm>
 #include "DFG.h"
+
+// Helper function to sanitize node names for DOT format
+// Replaces dots with underscores to avoid DOT parsing issues
+static string sanitizeForDot(const string& name) {
+  string result = name;
+  std::replace(result.begin(), result.end(), '.', '_');
+  return result;
+}
 
 DFG::DFG(Function& t_F, list<Loop*>* t_loops, bool t_targetFunction,
          bool t_precisionAware, list<string>* t_fusionStrategy,
@@ -1321,7 +1330,7 @@ void DFG::generateDot(Function &t_F, bool t_isTrimmedDemo) {
   for (DFGNode* node: nodes) {
 //    if (dyn_cast<Instruction>((*node)->getInst())) {
     if (t_isTrimmedDemo) {
-      file << "\tNode" << node->getID() << node->getOpcodeName() << "[shape=record, label=\"" << "(" << node->getID() << ") " << node->getOpcodeName() << "_" << node->getBBID() << "\"];\n";
+      file << "\tNode" << node->getID() << sanitizeForDot(node->getOpcodeName()) << "[shape=record, label=\"" << "(" << node->getID() << ") " << node->getOpcodeName() << "_" << node->getBBID() << "\"];\n";
     } else {
       // file << "\tNode" << node->getInst() << "[shape=record, label=\"" <<
       //     changeIns2Str(node->getInst()) << "\"];\n";
@@ -1344,7 +1353,7 @@ void DFG::generateDot(Function &t_F, bool t_isTrimmedDemo) {
     // Distinguish data and control flows. Don't show the ctrl flows that are optimzied out from the data flow optimization.
     if (find(m_DFGEdges.begin(), m_DFGEdges.end(), edge) != m_DFGEdges.end()) {
       if (t_isTrimmedDemo) {
-        file << "\tNode" << edge->getSrc()->getID() << edge->getSrc()->getOpcodeName() << " -> Node" << edge->getDst()->getID() << edge->getDst()->getOpcodeName() << "\n";
+        file << "\tNode" << edge->getSrc()->getID() << sanitizeForDot(edge->getSrc()->getOpcodeName()) << " -> Node" << edge->getDst()->getID() << sanitizeForDot(edge->getDst()->getOpcodeName()) << "\n";
       } else {
         // file << "\tNode" << edge->getSrc()->getInst() << " -> Node" << edge->getDst()->getInst() << "\n";
       }
@@ -1357,7 +1366,7 @@ void DFG::generateDot(Function &t_F, bool t_isTrimmedDemo) {
     // Distinguish data and control flows. Make ctrl flow invisible.
     if (find(m_ctrlEdges.begin(), m_ctrlEdges.end(), edge) == m_ctrlEdges.end()) {
       if (t_isTrimmedDemo and !edge->isInterEdge()) {
-        file << "\tNode" << edge->getSrc()->getID() << edge->getSrc()->getOpcodeName() << " -> Node" << edge->getDst()->getID() << edge->getDst()->getOpcodeName() << "\n";
+        file << "\tNode" << edge->getSrc()->getID() << sanitizeForDot(edge->getSrc()->getOpcodeName()) << " -> Node" << edge->getDst()->getID() << sanitizeForDot(edge->getDst()->getOpcodeName()) << "\n";
       } else {
         // file << "\tNode" << edge->getSrc()->getInst() << " -> Node" << edge->getDst()->getInst() << "\n";
       }
@@ -1370,7 +1379,7 @@ void DFG::generateDot(Function &t_F, bool t_isTrimmedDemo) {
     // Distinguish data and control flows. Make ctrl flow invisible.
     if (find(m_ctrlEdges.begin(), m_ctrlEdges.end(), edge) == m_ctrlEdges.end()) {
       if (t_isTrimmedDemo and edge->isInterEdge()) {
-        file << "\tNode" << edge->getSrc()->getID() << edge->getSrc()->getOpcodeName() << " -> Node" << edge->getDst()->getID() << edge->getDst()->getOpcodeName() << "\n";
+        file << "\tNode" << edge->getSrc()->getID() << sanitizeForDot(edge->getSrc()->getOpcodeName()) << " -> Node" << edge->getDst()->getID() << sanitizeForDot(edge->getDst()->getOpcodeName()) << "\n";
       } else {
         // file << "\tNode" << edge->getSrc()->getInst() << " -> Node" << edge->getDst()->getInst() << "\n";
       }
