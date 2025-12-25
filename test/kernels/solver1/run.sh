@@ -1,1 +1,1 @@
-opt --loop-unroll --unroll-count=1 -load ../../../build/mapper/libmapperPass.so -mapperPass kernel.bc
+opt-21 --load-pass-plugin=../../../build/src/libmapperPass.so --passes="mapperPass" kernel.bc

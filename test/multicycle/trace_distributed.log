@@ -1,0 +1,312 @@
+Initialize opt latency for DFG nodes: 
+load : 2
+sdiv : 4
+store : 2
+Deciding fusion strategy for DFG nodes: 
+Initialize additional functionality on CGRA nodes: 
+call-fp2fx : [4,8,7,11]: 4 8 7 11 
+complex-BrT : [4,5,6,7]: 4 5 6 7 
+complex-CoT : [8,9,10,11]: 8 9 10 11 
+div : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+load : [0,1,2,3]: 0 1 2 3 
+store : [0,1,2,3]: 0 1 2 3 
+Finding fusion pattern for DFG: 
+[function 'main' is not in our target list]
+Initialize opt latency for DFG nodes: 
+load : 2
+sdiv : 4
+store : 2
+Deciding fusion strategy for DFG nodes: 
+Initialize additional functionality on CGRA nodes: 
+call-fp2fx : [4,8,7,11]: 4 8 7 11 
+complex-BrT : [4,5,6,7]: 4 5 6 7 
+complex-CoT : [8,9,10,11]: 8 9 10 11 
+div : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+load : [0,1,2,3]: 0 1 2 3 
+store : [0,1,2,3]: 0 1 2 3 
+Finding fusion pattern for DFG: 
+==================================
+[function '_Z6kernelPiS_' is one of our targets]
+*** current function: _Z6kernelPiS_
+==================================
+==================================
+[reorder DFG along with the longest path]
+[0;31mPlease check the operations targeting multi-cycle execution in <param.json>:"[0m load  sdiv [0;31m".[0m
+[0;31mPlease check the pipelinable operations in <param.json>:"[0m div  load [0;31m".[0m
+==================================
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+[0;31mInvalid CGRA node ID 4 for operation call-fp2fx[0m
+[0;31mInvalid CGRA node ID 8 for operation call-fp2fx[0m
+[0;31mInvalid CGRA node ID 7 for operation call-fp2fx[0m
+[0;31mInvalid CGRA node ID 11 for operation call-fp2fx[0m
+[0;31mInvalid CGRA node ID 4 for operation complex-BrT[0m
+[0;31mInvalid CGRA node ID 5 for operation complex-BrT[0m
+[0;31mInvalid CGRA node ID 6 for operation complex-BrT[0m
+[0;31mInvalid CGRA node ID 7 for operation complex-BrT[0m
+[0;31mInvalid CGRA node ID 8 for operation complex-CoT[0m
+[0;31mInvalid CGRA node ID 9 for operation complex-CoT[0m
+[0;31mInvalid CGRA node ID 10 for operation complex-CoT[0m
+[0;31mInvalid CGRA node ID 11 for operation complex-CoT[0m
+[0;31mInvalid CGRA node ID 4 for operation div[0m
+[0;31mInvalid CGRA node ID 5 for operation div[0m
+[0;31mInvalid CGRA node ID 6 for operation div[0m
+[0;31mInvalid CGRA node ID 7 for operation div[0m
+[0;31mInvalid CGRA node ID 8 for operation div[0m
+[0;31mInvalid CGRA node ID 9 for operation div[0m
+[0;31mInvalid CGRA node ID 10 for operation div[0m
+[0;31mInvalid CGRA node ID 11 for operation div[0m
+[0;31mInvalid CGRA node ID 12 for operation div[0m
+[0;31mInvalid CGRA node ID 13 for operation div[0m
+[0;31mInvalid CGRA node ID 14 for operation div[0m
+[0;31mInvalid CGRA node ID 15 for operation div[0m
+==================================
+[show opcode count]
+add : 1
+br : 1
+cmp : 1
+getelementptr : 2
+phi : 1
+store : 2
+vload : 1
+vsdiv : 1
+DFG node count: 10; DFG edge count: 12; SIMD node count: 2
+==================================
+[generate dot for DFG]
+==================================
+[generate JSON for DFG]
+==================================
+[ResMII: 3]
+==================================
+[RecMII: 2]
+==================================
+[heuristic]
+----------------------------------------
+[DEBUG] start heuristic algorithm with II=3
+[DEBUG] schedule dfg node[6] onto fu[3] at cycle 0 within II: 3
+[DEBUG] setDFGNode 6 onto CGRANode 3 at cycle: 0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[7] onto fu[1] at cycle 1 within II: 3
+[DEBUG] setDFGNode 7 onto CGRANode 1 at cycle: 1
+[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 1; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[3]-->[1] (bypass:0) dfgNode: 6 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 6
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[8] onto fu[0] at cycle 2 within II: 3
+[DEBUG] setDFGNode 8 onto CGRANode 0 at cycle: 2
+[DEBUG] in allocateReg() t_cycle: 1; i: 0 CGRA node: 0; link: 3 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[1]-->[0] (bypass:0) dfgNode: 7 at cycle 1
+[DEBUG] skip predecessor routing -- dfgNode: 7
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[0] onto fu[2] at cycle 3 within II: 3
+[DEBUG] setDFGNode 0 onto CGRANode 2 at cycle: 3
+[DEBUG] in allocateReg() t_cycle: 2; i: 0 CGRA node: 2; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[0]-->[2] (bypass:0) dfgNode: 8 at cycle 2
+[DEBUG] tryToRoute -- srcDFGNode: 6, srcCGRANode: 3; dstDFGNode: 0, dstCGRANode: 2; backEdge: 0
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] cannot route due to II is violated for backward cycle
+DEBUG target DFG node: 0 on fu: 2 failed, mapped pred DFG node: 6; return false
+[DEBUG] fail1 in schedule() II: 3
+[DEBUG] the failed path -- cycle: 2 CGRANode: 0
+[DEBUG] the failed path -- cycle: 3 CGRANode: 2
+----------------------------------------
+[DEBUG] start heuristic algorithm with II=4
+[DEBUG] schedule dfg node[6] onto fu[3] at cycle 0 within II: 4
+[DEBUG] setDFGNode 6 onto CGRANode 3 at cycle: 0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[7] onto fu[1] at cycle 1 within II: 4
+[DEBUG] setDFGNode 7 onto CGRANode 1 at cycle: 1
+[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 1; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[3]-->[1] (bypass:0) dfgNode: 6 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 6
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[8] onto fu[0] at cycle 2 within II: 4
+[DEBUG] setDFGNode 8 onto CGRANode 0 at cycle: 2
+[DEBUG] in allocateReg() t_cycle: 1; i: 0 CGRA node: 0; link: 3 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[1]-->[0] (bypass:0) dfgNode: 7 at cycle 1
+[DEBUG] skip predecessor routing -- dfgNode: 7
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[0] onto fu[2] at cycle 3 within II: 4
+[DEBUG] setDFGNode 0 onto CGRANode 2 at cycle: 3
+[DEBUG] in allocateReg() t_cycle: 2; i: 0 CGRA node: 2; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[0]-->[2] (bypass:0) dfgNode: 8 at cycle 2
+[DEBUG] tryToRoute -- srcDFGNode: 6, srcCGRANode: 3; dstDFGNode: 0, dstCGRANode: 2; backEdge: 0
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] check route size: 2
+[DEBUG] reset duration: 3 t_dstCycle: 3 previous: 0 II: 4
+[DEBUG] in allocateReg() t_cycle: 0; i: 1 CGRA node: 2; link: 3 duration 3
+[DEBUG] done reg allocation
+[DEBUG] occupy link[3]-->[2] (bypass:0) dfgNode: 6 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 8
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] tryToRoute -- srcDFGNode: 0, srcCGRANode: 2; dstDFGNode: 6, dstCGRANode: 3; backEdge: 1
+[DEBUG] in shareSameCycle is true: node 6
+[DEBUG] check route size: 2
+[DEBUG] reset duration: 1 t_dstCycle: 0 previous: 3 II: 4
+[DEBUG] in allocateReg() t_cycle: 3; i: 0 CGRA node: 3; link: 2 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[2]-->[3] (bypass:0) dfgNode: 0 at cycle 3
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[1] onto fu[0] at cycle 4 within II: 4
+[DEBUG] setDFGNode 1 onto CGRANode 0 at cycle: 4
+[DEBUG] in allocateReg() t_cycle: 3; i: 0 CGRA node: 0; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[2]-->[0] (bypass:0) dfgNode: 0 at cycle 3
+[DEBUG] skip predecessor routing -- dfgNode: 0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[4] onto fu[2] at cycle 4 within II: 4
+[DEBUG] setDFGNode 4 onto CGRANode 2 at cycle: 4
+[DEBUG] tryToRoute -- srcDFGNode: 0, srcCGRANode: 2; dstDFGNode: 4, dstCGRANode: 2; backEdge: 0
+[DEBUG] check route size: 1
+[DEBUG] allocate for local reg maintain... duration=1 last cycle: 3
+[DEBUG] in allocateReg() t_cycle: 3; i: 0 CGRA node: 2; link: 4 duration 1
+[DEBUG] done reg allocation
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[2] onto fu[2] at cycle 5 within II: 4
+[DEBUG] setDFGNode 2 onto CGRANode 2 at cycle: 5
+[DEBUG] in allocateReg() t_cycle: 4; i: 0 CGRA node: 2; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[0]-->[2] (bypass:0) dfgNode: 1 at cycle 4
+[DEBUG] skip predecessor routing -- dfgNode: 1
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[3] onto fu[3] at cycle 6 within II: 4
+[DEBUG] setDFGNode 3 onto CGRANode 3 at cycle: 6
+[DEBUG] in allocateReg() t_cycle: 5; i: 0 CGRA node: 3; link: 2 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[2]-->[3] (bypass:0) dfgNode: 2 at cycle 5
+[DEBUG] skip predecessor routing -- dfgNode: 2
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[5] onto fu[1] at cycle 7 within II: 4
+[DEBUG] setDFGNode 5 onto CGRANode 1 at cycle: 7
+[DEBUG] in allocateReg() t_cycle: 6; i: 0 CGRA node: 1; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[3]-->[1] (bypass:0) dfgNode: 3 at cycle 6
+[DEBUG] skip predecessor routing -- dfgNode: 3
+[DEBUG] tryToRoute -- srcDFGNode: 4, srcCGRANode: 2; dstDFGNode: 5, dstCGRANode: 1; backEdge: 0
+[DEBUG] check route size: 3
+[DEBUG] occupy link[2]-->[0] (bypass:1) dfgNode: 4 at cycle 4
+[DEBUG] reset duration: 2 t_dstCycle: 7 previous: 5 II: 4
+[DEBUG] in allocateReg() t_cycle: 5; i: 1 CGRA node: 1; link: 2 duration 2
+[DEBUG] done reg allocation
+[DEBUG] occupy link[0]-->[1] (bypass:0) dfgNode: 4 at cycle 5
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[9] onto fu[1] at cycle 8 within II: 4
+[DEBUG] setDFGNode 9 onto CGRANode 1 at cycle: 8
+[DEBUG] tryToRoute -- srcDFGNode: 5, srcCGRANode: 1; dstDFGNode: 9, dstCGRANode: 1; backEdge: 0
+[DEBUG] check route size: 1
+[DEBUG] allocate for local reg maintain... duration=1 last cycle: 7
+[DEBUG] in allocateReg() t_cycle: 7; i: 0 CGRA node: 1; link: 4 duration 1
+[DEBUG] done reg allocation
+[DEBUG] success in schedule()
+Mapping algorithm elapsed time=1ms
+--------------------------- cycle:0 ---------------------------
+[     ] ‚Üê [  6  ]
+   ‚áÖ         ‚Üì 
+[     ]   [     ]
+--------------------------- cycle:1 ---------------------------
+[     ] ‚Üí [     ]
+               
+[     ] ‚áÑ [  7  ]
+--------------------------- cycle:2 ---------------------------
+[     ]   [     ]
+   ‚Üë         ‚Üì 
+[  8  ]   [     ]
+--------------------------- cycle:3 ---------------------------
+[  0  ] ‚Üí [     ]
+   ‚Üì           
+[     ]   [     ]
+--------------------------- cycle:4 ---------------------------
+[  4  ] ‚Üê [  6  ]
+   ‚áÖ         ‚Üì 
+[  1  ]   [     ]
+--------------------------- cycle:5 ---------------------------
+[  2  ] ‚Üí [     ]
+               
+[     ] ‚áÑ [  7  ]
+--------------------------- cycle:6 ---------------------------
+[     ]   [  3  ]
+   ‚Üë         ‚Üì 
+[  8  ]   [     ]
+--------------------------- cycle:7 ---------------------------
+[  0  ] ‚Üí [     ]
+   ‚Üì           
+[     ]   [  5  ]
+--------------------------- cycle:8 ---------------------------
+[  4  ] ‚Üê [  6  ]
+   ‚áÖ         ‚Üì 
+[  1  ]   [  9  ]
+--------------------------- cycle:9 ---------------------------
+[  2  ] ‚Üí [     ]
+               
+[     ] ‚áÑ [  7  ]
+--------------------------- cycle:10 ---------------------------
+[     ]   [  3  ]
+   ‚Üë         ‚Üì 
+[  8  ]   [     ]
+--------------------------- cycle:11 ---------------------------
+[  0  ] ‚Üí [     ]
+   ‚Üì           
+[     ]   [  5  ]
+--------------------------- cycle:12 ---------------------------
+[  4  ] ‚Üê [  6  ]
+   ‚áÖ         ‚Üì 
+[  1  ]   [  9  ]
+--------------------------- cycle:13 ---------------------------
+[  2  ] ‚Üí [     ]
+               
+[     ] ‚áÑ [  7  ]
+--------------------------- cycle:14 ---------------------------
+[     ]   [  3  ]
+   ‚Üë         ‚Üì 
+[  8  ]   [     ]
+--------------------------- cycle:15 ---------------------------
+[  0  ] ‚Üí [     ]
+   ‚Üì           
+[     ]   [  5  ]
+--------------------------- cycle:16 ---------------------------
+[  4  ] ‚Üê [  6  ]
+   ‚áÖ         ‚Üì 
+[  1  ]   [  9  ]
+[Mapping II: 4]
+[Mapping Success]
+==================================
+[Utilization & DVFS stats]
+tile avg fu utilization: 62.5%; avg xbar utilization: 100%; avg overall utilization: 400%
+max overall utilization: 400%
+histogram 0% tile utilization: 0
+histogram (0%, 25%] tile utilization: 0
+histogram (25%, 50%] tile utilization: 0
+histogram (50%, 100%] tile utilization: 4
+tile average DVFS frequency level: 100%
+histogram 0% tile DVFS frequency ratio: 0
+histogram 25% tile DVFS frequency ratio: 0
+histogram 50% tile DVFS frequency ratio: 0
+histogram 100% tile DVFS frequency ratio: 4
+==================================
+[DEBUG] inside roi for CGRA node 0...
+[DEBUG] inside roi for CGRA node 0...
+[Output Json]
+[Output Json for Incremental Mapping]
+==================================
+ﬁ¿         ˇˇˇˇBC¿ﬁ5     b0$JYæ¶]˚µœQÄL   !  Ü  !    "   Å#ëA»I29íÑ%ãbÄEBíBÑ28K
+2BàH∞d!CÜàG2B$q»$)@ÜåK2dÑí #DàÂ !B*(*êQ\ #π@Ü√ÀBåå$2b,9»ê#»à:dDG»"CF â      "f≤BÇ	RBÇ	ëq¬PH
+	&D∆BB&ö# ÉÑàƒ@` †d)S s†0å@s   Q  $  Í%¯ˇˇˇˇ0¿ 8 ˛ ê -∞˛AAÖ ¬‰!⁄°⁄ ﬁ!‹Å A wxwhv(áp0ÄpáwhzêápÄxHw8á6háp†t ËAÍ° bË!∆a⁄ ‰·Ë°∆ÅﬁA⁄@Í¡Ã°‰°Ê!Ù° < zy8ár†á6x® ‡ÿ°⁄†‚  Ë!‰· Å⁄¿ !Ë°‰°ÊXÉp(áy`É5v†w–áq∞6XÉqrÄ6XÉqát |`É5áqÄx`É5áwhx`|pázh6XÉqêáq`É5 át†6XrxzÄyxr`É50vásh6XsÄá6yh{¿6XsÄá8∞shv`É50x†áwHw†6Xs®v`sÄá8∞6Xuòáqxw∞6Xvòár`É5párxw`É5Äáp®z@6Xx(y0ávxw`É5Äy(rêárò6Xyáy`É5êáqÄáq`É5êrh6XÉy6XÉy@ápê6XÉy@ápò6XÉyÄáry(áy†yHáq†6XÉyòqò6X{¿7àÉp`É5∞<p96X{¿7òÉp`É5∞<p:6X{¿Ép 6 ê¬Üz˛ˇˇˇ L Ä? $@laAAA!ÉÄ0yáv(á6ÄáwHw†árê¿ﬁ¡⁄Ä !Ã ‹·⁄Ä‰!‡“¡Œ°⁄!Ë zêáz(ÄòzáqXá6Äyxz(áq†áwêá6áz0s(yhÉyH}(  Ç¬AŒ°Ë°∆ÍxÄv(á6há8 zy8ár†á60árz®y(áy ÷  aÿ`¬ÅË¡ÙaÏÅ÷`∆Å‡Å÷`∆!»ÿ`∆a‡ÿ`∆·⁄ÿ‹°⁄Å÷`‰aÿ`»!ËÅ÷ÄﬁÅ‡AﬁÅÿ`ÃÅ¬·⁄Å÷¿‡°¬A⁄¡Ä÷¿‡!Ï¿⁄Åÿ`ÃË·“¡ËÅ÷¿ÍÅÿ¡‡!ÏÄ÷@Êaﬁ¡ÏÅ÷ÄÊ°ÿ`‹°ﬁ¡ÿ`‡!ÍÅ–Å÷  AÃ°ﬁ¡ÿ`‡A Å‰°ÊÅ÷@¬aÿ`‰a‡aÿ`‰Å⁄Å÷`ƒÅ÷`–!‰Ä÷`–!ÊÄ÷`‡°∆A aËA“aËÅ÷`ÊAÊÅ÷¿¿‚ ÿ`Ï‹@¬Å÷¿¿Ê ÿ`Ï‹Ä¬Å÷¿ Ä 	@
+@ò∞a) H†É¿ÄèÒˇˇˇˇp
+Ä  H@∂¿Ç Ç Ç†   I     Ñ@ò0D1!0  ∞pêáv∞:hÉpÄx`árhÉváqxáy¿á8†7Ä7ÄÉßPm–zm rpp†s z0r– wz0r†s m rpr†v@z`t–È`t†v@mêq x†q x–Ó0r†v@m0q x–¶‡s JAÜå4Bvb®eBLXà"§…ûgÇ`      P  ∞É*A0Ä     (  R-ƒ  @         P C™ß)          
+`H≈ë¡¿         P 
++  dÅ  	   2òLêå	&G∆Cí ä" Kp
+ä(ÑÇ(“  ±  –   3Äƒ·f=àC8Ñ√åBÄyxsòqÊ ÌÙÄ3B¬¡Œ°f0=àC8ÑÉÃ=»C=å=Ãxåtp{yHáppzpvxáp áÃÏê·0n0„P3ƒﬁ!ÿ!¬af0â;ºÉ;–C9¥<ºÉ<Ñ;Ãv`{h7hárh7Äápêáp`v(v¯vxáwÄá_áqáròáyòÅ,ÓÓ‡ı¿Ï0b»°‰°Ã°‰°‹a !ƒÅ a÷êC9»C9òC9»C9∏√8îC8à;î√/ºÉ<¸Ç;‘;∞√«iápXárpÉthx`átát†áŒSÓ ÚP‰ê„@· ÏP3 (‹¡¬A“!‹Å‹‡‰·ÍfQ8∞C:úÉ;ÃP$v`{h7`áwxxòQLÙêP3j aË!ﬁ¡~‰°Ã!aTÖÉ8Ã√;∞C=–C9¸¬<‰C;à√;∞√å≈
+áyòáwátz(ròÅ\„Ï¿ÂPÛ0#¡“A‰·ÿ·ﬁfH;∞É=¥ÉÑ√8åC9Ã√<∏¡9»√;‘<ÃH¥qv`qáqXá€∆Ï`Ì‡ Â0Â ˆPn„0Â0Û‡È‡‰P¯0#‚Ïa¬Åÿ·Ï!Ê!ƒ!ÿ!Ë!f ù;ºC=∏9îÉ9ÃXºppwxzzHáwpáÀÁÔ0·‡È@È†Â0√s®wá_òáppát†át–áròÅÑA9‡√8∞C=êC9Ã@ƒ† °‡Aﬁ¡f$c0·¿Ï0È@Â0C!ÉusHá_†á|Äárò±î<å√<î√8–C:ºÉ;Ã√å≈H!BaÊ!Œ¡RÅfLg0Ô Ô‡ÔPÙ0È@Â‡Ê ·–Â0£@ÉvhyáR∏√;Ñ;§C8ÃÉÑ9êÉ<Ã<Ñ√8î√G–°¬¬Åÿ·∆a“Å  y   `   íH Cà	dd»… Åå2FFFÅB†êÒƒ»9BÜåb√Ä  ãíM7<èÖY`  SDK Versionwchar_sizePIC Leveluwtableframe-pointerHomebrew clang version 21.1.8intomnipotent charSimple C++ TBAAllvm.loop.mustprogressllvm.loop.unroll.disablellvm.loop.isvectorizedllvm.loop.unroll.runtime.disable#Å1ÇÄ#2Ç$#Å2Ç,#
+3√‡œ$D3“‡Ã0L4√0–Å1CêÃ0 5√pp‘C◊Q3 ¡2É¿@3çå&(#66ª6ó∂7≤:∂23∂∞≥πQ
+™≤.,66ª6ó4≤27∫QÇ  ©  -   
+r(áwÄzXpòC=∏√8∞C9–√ÇÊ∆°ËA¬¡Ê!Ë!ﬁ¡4„`ÁP· ‰@· ÁPÙ∞ÄÅy(áp`vxáqz(rXpú√8¥;§É=î√kÿ!‹·‹ ‰a‹ ËÅ¬a–°»a¬Åÿa¡Ù ·PÙÄàusHáœ8ºÉ;ÿC9»√9îÉ;åC9å=»;    —     Ã<§É;ú;î=†É<îC8ê√   a(  B   #Ü∞@      ¥c√0§ÖPÄ #   ·a     "G»êQƒ(    Mñ _Z6kernelPiS__Z6kernelPiS_: argument 0_Z6kernelPiS_: argument 1 +3É√ò¨–¿ `EëÑÅlŒ`CÄ   C
+ ¡‡h–ˇˇˇbP !Gs˛ˇˇˇÉT(
+∞Ò!H	v†‡†¯(¢¬H2@¿'ACƒ     [é"Ëé4@‘`ÀÅ›°Hl	  Ab     Ü ∞        a(     #Ü∞@      ¥c√0§ÖPÄ  ·a     +ä1¯¿ ƒ    .P°0¿ƒá`$ÿÅÉ‚C@à#»‡ ü,@    [Ü!Ë∂F–mI   Ab     Ü ∏        q      2"Ñ¶8†n     e  7   î∞      @      L      X       X      –       F      ^             –                  q            ˇˇˇˇ $  v            ˇˇˇˇ $  Ñ   %      $   ˇˇˇˇ,  ©             ˇˇˇˇ   Ø            ˇˇˇˇ       ]  1   îv   inputoutputmain_Z6kernelPiS_llvm.experimental.noalias.scope.decl21.1.8arm64-apple-macosx14.0.0multicycle_test.cpp_main__Z6kernelPiS__llvm.experimental.noalias.scope.decl_input_output                  

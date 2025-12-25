@@ -1,1 +1,1 @@
-opt --loop-unroll --unroll-count=4 -load ../../../build/mapper/libmapperPass.so -mapperPass combine.bc
+opt-21 --load-pass-plugin=../../../build/src/libmapperPass.so --passes="mapperPass" combine.bc

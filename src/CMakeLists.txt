@@ -28,7 +28,16 @@ add_library(mapperPass MODULE
     Mapper.cpp
 )
 
+# Link against OpenMP
 target_link_libraries(mapperPass PRIVATE OpenMP::OpenMP_CXX)
+
+# Link against LLVM libraries (required for Linux, optional for macOS)
+# Get the LLVM libraries needed for our pass
+llvm_map_components_to_libnames(llvm_libs support core analysis)
+if(NOT APPLE)
+    # On Linux, we need to explicitly link against LLVM libraries
+    target_link_libraries(mapperPass PRIVATE ${llvm_libs})
+endif()
 
 # Use C++11 to compile our pass (i.e., supply -std=c++11).
 #if (NOT CMAKE_VERSION VERSION_LESS 3.1)

@@ -1,2 +1,2 @@
 ./compile.sh
-opt -load ../../cgra-mapper/build/mapper/libmapperPass.so -mapperPass susan.bc
+opt-21 --load-pass-plugin=../../../build/src/libmapperPass.so --passes="mapperPass" susan.bc
