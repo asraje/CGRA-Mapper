@@ -88,32 +88,32 @@ DFG node count: 10; DFG edge count: 12; SIMD node count: 2
 [DEBUG] schedule dfg node[6] onto fu[3] at cycle 0 within II: 3
 [DEBUG] setDFGNode 6 onto CGRANode 3 at cycle: 0
 [DEBUG] success in schedule()
-[DEBUG] schedule dfg node[7] onto fu[1] at cycle 1 within II: 3
-[DEBUG] setDFGNode 7 onto CGRANode 1 at cycle: 1
-[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 1; link: 0 duration 1
+[DEBUG] schedule dfg node[7] onto fu[2] at cycle 1 within II: 3
+[DEBUG] setDFGNode 7 onto CGRANode 2 at cycle: 1
+[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 2; link: 3 duration 1
 [DEBUG] done reg allocation
-[DEBUG] occupy link[3]-->[1] (bypass:0) dfgNode: 6 at cycle 0
+[DEBUG] occupy link[3]-->[2] (bypass:0) dfgNode: 6 at cycle 0
 [DEBUG] skip predecessor routing -- dfgNode: 6
 [DEBUG] success in schedule()
 [DEBUG] schedule dfg node[8] onto fu[0] at cycle 2 within II: 3
 [DEBUG] setDFGNode 8 onto CGRANode 0 at cycle: 2
-[DEBUG] in allocateReg() t_cycle: 1; i: 0 CGRA node: 0; link: 3 duration 1
+[DEBUG] in allocateReg() t_cycle: 1; i: 0 CGRA node: 0; link: 0 duration 1
 [DEBUG] done reg allocation
-[DEBUG] occupy link[1]-->[0] (bypass:0) dfgNode: 7 at cycle 1
+[DEBUG] occupy link[2]-->[0] (bypass:0) dfgNode: 7 at cycle 1
 [DEBUG] skip predecessor routing -- dfgNode: 7
 [DEBUG] success in schedule()
-[DEBUG] schedule dfg node[0] onto fu[2] at cycle 3 within II: 3
-[DEBUG] setDFGNode 0 onto CGRANode 2 at cycle: 3
-[DEBUG] in allocateReg() t_cycle: 2; i: 0 CGRA node: 2; link: 1 duration 1
+[DEBUG] schedule dfg node[0] onto fu[1] at cycle 3 within II: 3
+[DEBUG] setDFGNode 0 onto CGRANode 1 at cycle: 3
+[DEBUG] in allocateReg() t_cycle: 2; i: 0 CGRA node: 1; link: 2 duration 1
 [DEBUG] done reg allocation
-[DEBUG] occupy link[0]-->[2] (bypass:0) dfgNode: 8 at cycle 2
-[DEBUG] tryToRoute -- srcDFGNode: 6, srcCGRANode: 3; dstDFGNode: 0, dstCGRANode: 2; backEdge: 0
+[DEBUG] occupy link[0]-->[1] (bypass:0) dfgNode: 8 at cycle 2
+[DEBUG] tryToRoute -- srcDFGNode: 6, srcCGRANode: 3; dstDFGNode: 0, dstCGRANode: 1; backEdge: 0
 [DEBUG] in shareSameCycle is true: node 0
 [DEBUG] cannot route due to II is violated for backward cycle
-DEBUG target DFG node: 0 on fu: 2 failed, mapped pred DFG node: 6; return false
+DEBUG target DFG node: 0 on fu: 1 failed, mapped pred DFG node: 6; return false
 [DEBUG] fail1 in schedule() II: 3
 [DEBUG] the failed path -- cycle: 2 CGRANode: 0
-[DEBUG] the failed path -- cycle: 3 CGRANode: 2
+[DEBUG] the failed path -- cycle: 3 CGRANode: 1
 ----------------------------------------
 [DEBUG] start heuristic algorithm with II=4
 [DEBUG] schedule dfg node[6] onto fu[3] at cycle 0 within II: 4
