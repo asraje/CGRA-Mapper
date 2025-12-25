@@ -1,0 +1,1308 @@
+Initialize opt latency for DFG nodes: 
+Deciding fusion strategy for DFG nodes: 
+Initialize additional functionality on CGRA nodes: 
+Finding fusion pattern for DFG: 
+[function 'main' is not in our target list]
+Initialize opt latency for DFG nodes: 
+Deciding fusion strategy for DFG nodes: 
+Initialize additional functionality on CGRA nodes: 
+Finding fusion pattern for DFG: 
+==================================
+[function '_Z6kernelPfS_S_' is one of our targets]
+*** current function: _Z6kernelPfS_S_
+==================================
+==================================
+==================================
+[reorder DFG along with the longest path]
+==================================
+==================================
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+disabling multiple ops
+Without customization in param.json, we enable store functionality on the left most column.
+Without customization in param.json, we enable load functionality on the left most column.
+==================================
+[show opcode count]
+add : 2
+br : 1
+cmp : 1
+getelementptr : 2
+load : 2
+mul : 1
+phi : 2
+store : 1
+DFG node count: 12; DFG edge count: 16; SIMD node count: 0
+==================================
+[generate dot for DFG]
+==================================
+[generate JSON for DFG]
+==================================
+[ResMII: 1]
+==================================
+[RecMII: 2]
+[debug] unused_high_dvfs_cgra_tiles_across_II: 4
+[debug] unused_mid_dvfs_cgra_tiles_across_II: 0
+[debug] unused_low_dvfs_cgra_tiles_across_II: 16
+==================================
+[heuristic]
+----------------------------------------
+[DEBUG] start heuristic algorithm with II=2
+[DEBUG] schedule dfg node[9] onto fu[21] at cycle 0 within II: 2
+[DEBUG] setDFGNode 9 onto CGRANode 21 at cycle: 0
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[10] onto fu[22] at cycle 1 within II: 2
+[DEBUG] setDFGNode 10 onto CGRANode 22 at cycle: 1
+[cheng] synced for node: 16; check synced: 1; addr: 0x123e08fe0
+[cheng] synced for node: 17; check synced: 1; addr: 0x123e09110
+[cheng] synced for node: 22; check synced: 1; addr: 0x123e09700
+[cheng] synced for node: 23; check synced: 1; addr: 0x123e09830
+[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 22; link: 2 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[22] (bypass:0) dfgNode: 9 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 9
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[11] onto fu[21] at cycle 5 within II: 2
+[DEBUG] setDFGNode 11 onto CGRANode 21 at cycle: 5
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 4; i: 0 CGRA node: 21; link: 3 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[22]-->[21] (bypass:0) dfgNode: 10 at cycle 4
+[DEBUG] skip predecessor routing -- dfgNode: 10
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[0] onto fu[15] at cycle 6 within II: 2
+[DEBUG] setDFGNode 0 onto CGRANode 15 at cycle: 6
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 5; i: 0 CGRA node: 15; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[15] (bypass:0) dfgNode: 11 at cycle 5
+[DEBUG] tryToRoute -- srcDFGNode: 9, srcCGRANode: 21; dstDFGNode: 0, dstCGRANode: 15; backEdge: 0
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] cannot route due to II is violated for backward cycle
+DEBUG target DFG node: 0 on fu: 15 failed, mapped pred DFG node: 9; return false
+[DEBUG] fail1 in schedule() II: 2
+[DEBUG] the failed path -- cycle: 6 CGRANode: 15
+[DEBUG] the failed path -- cycle: 5 CGRANode: 21
+----------------------------------------
+[DEBUG] start heuristic algorithm with II=3
+[DEBUG] schedule dfg node[9] onto fu[21] at cycle 0 within II: 3
+[DEBUG] setDFGNode 9 onto CGRANode 21 at cycle: 0
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[10] onto fu[15] at cycle 1 within II: 3
+[DEBUG] setDFGNode 10 onto CGRANode 15 at cycle: 1
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 15; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[15] (bypass:0) dfgNode: 9 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 9
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[11] onto fu[21] at cycle 2 within II: 3
+[DEBUG] setDFGNode 11 onto CGRANode 21 at cycle: 2
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 1; i: 0 CGRA node: 21; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[15]-->[21] (bypass:0) dfgNode: 10 at cycle 1
+[DEBUG] skip predecessor routing -- dfgNode: 10
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[0] onto fu[15] at cycle 3 within II: 3
+[DEBUG] setDFGNode 0 onto CGRANode 15 at cycle: 3
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 2; i: 0 CGRA node: 15; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[15] (bypass:0) dfgNode: 11 at cycle 2
+[DEBUG] tryToRoute -- srcDFGNode: 9, srcCGRANode: 21; dstDFGNode: 0, dstCGRANode: 15; backEdge: 0
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] cannot route due to II is violated for backward cycle
+DEBUG target DFG node: 0 on fu: 15 failed, mapped pred DFG node: 9; return false
+[DEBUG] fail1 in schedule() II: 3
+[DEBUG] the failed path -- cycle: 3 CGRANode: 15
+[DEBUG] the failed path -- cycle: 2 CGRANode: 21
+----------------------------------------
+[DEBUG] start heuristic algorithm with II=4
+[DEBUG] schedule dfg node[9] onto fu[21] at cycle 0 within II: 4
+[DEBUG] setDFGNode 9 onto CGRANode 21 at cycle: 0
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[10] onto fu[15] at cycle 1 within II: 4
+[DEBUG] setDFGNode 10 onto CGRANode 15 at cycle: 1
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 0; i: 0 CGRA node: 15; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[15] (bypass:0) dfgNode: 9 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 9
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[11] onto fu[21] at cycle 2 within II: 4
+[DEBUG] setDFGNode 11 onto CGRANode 21 at cycle: 2
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 1; i: 0 CGRA node: 21; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[15]-->[21] (bypass:0) dfgNode: 10 at cycle 1
+[DEBUG] skip predecessor routing -- dfgNode: 10
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[0] onto fu[15] at cycle 3 within II: 4
+[DEBUG] setDFGNode 0 onto CGRANode 15 at cycle: 3
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 2; i: 0 CGRA node: 15; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[15] (bypass:0) dfgNode: 11 at cycle 2
+[DEBUG] tryToRoute -- srcDFGNode: 9, srcCGRANode: 21; dstDFGNode: 0, dstCGRANode: 15; backEdge: 0
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] check route size: 2
+[DEBUG] reset duration: 3 t_dstCycle: 3 previous: 0 II: 4
+[DEBUG] in allocateReg() t_cycle: 0; i: 1 CGRA node: 15; link: 0 duration 3
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[15] (bypass:0) dfgNode: 9 at cycle 0
+[DEBUG] skip predecessor routing -- dfgNode: 11
+[DEBUG] in shareSameCycle is true: node 0
+[DEBUG] tryToRoute -- srcDFGNode: 0, srcCGRANode: 15; dstDFGNode: 9, dstCGRANode: 21; backEdge: 1
+[DEBUG] in shareSameCycle is true: node 9
+[DEBUG] check route size: 2
+[DEBUG] reset duration: 1 t_dstCycle: 0 previous: 3 II: 4
+[DEBUG] in allocateReg() t_cycle: 3; i: 0 CGRA node: 21; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[15]-->[21] (bypass:0) dfgNode: 0 at cycle 3
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[2] onto fu[9] at cycle 4 within II: 4
+[DEBUG] setDFGNode 2 onto CGRANode 9 at cycle: 4
+[cheng] synced for node: 2; check synced: 1; addr: 0x123e07f40
+[cheng] synced for node: 3; check synced: 1; addr: 0x123e08070
+[cheng] synced for node: 8; check synced: 1; addr: 0x123e08660
+[cheng] synced for node: 9; check synced: 1; addr: 0x123e08790
+[DEBUG] in allocateReg() t_cycle: 3; i: 0 CGRA node: 9; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[15]-->[9] (bypass:0) dfgNode: 0 at cycle 3
+[DEBUG] skip predecessor routing -- dfgNode: 0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[4] onto fu[27] at cycle 5 within II: 4
+[DEBUG] setDFGNode 4 onto CGRANode 27 at cycle: 5
+[cheng] synced for node: 26; check synced: 1; addr: 0x123e09bc0
+[cheng] synced for node: 27; check synced: 1; addr: 0x123e09cf0
+[cheng] synced for node: 32; check synced: 1; addr: 0x123e0a2e0
+[cheng] synced for node: 33; check synced: 1; addr: 0x123e0a410
+[DEBUG] occupy link[15]-->[21] (bypass:1) dfgNode: 0 at cycle 3
+[DEBUG] in allocateReg() t_cycle: 4; i: 0 CGRA node: 27; link: 1 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[21]-->[27] (bypass:0) dfgNode: 0 at cycle 4
+[DEBUG] skip predecessor routing -- dfgNode: 0
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[3] onto fu[12] at cycle 11 within II: 4
+[DEBUG] setDFGNode 3 onto CGRANode 12 at cycle: 11
+[cheng] synced for node: 12; check synced: 1; addr: 0x123e08b20
+[cheng] synced for node: 13; check synced: 1; addr: 0x123e08c50
+[cheng] synced for node: 18; check synced: 1; addr: 0x123e09240
+[cheng] synced for node: 19; check synced: 1; addr: 0x123e09370
+[DEBUG] occupy link[9]-->[15] (bypass:1) dfgNode: 2 at cycle 7
+[DEBUG] occupy link[15]-->[14] (bypass:1) dfgNode: 2 at cycle 8
+[DEBUG] occupy link[14]-->[13] (bypass:1) dfgNode: 2 at cycle 9
+[DEBUG] in allocateReg() t_cycle: 10; i: 0 CGRA node: 12; link: 3 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[13]-->[12] (bypass:0) dfgNode: 2 at cycle 10
+[DEBUG] skip predecessor routing -- dfgNode: 2
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[5] onto fu[24] at cycle 11 within II: 4
+[DEBUG] setDFGNode 5 onto CGRANode 24 at cycle: 11
+[cheng] synced for node: 24; check synced: 1; addr: 0x123e09960
+[cheng] synced for node: 25; check synced: 1; addr: 0x123e09a90
+[cheng] synced for node: 30; check synced: 1; addr: 0x123e0a080
+[cheng] synced for node: 31; check synced: 1; addr: 0x123e0a1b0
+[DEBUG] occupy link[27]-->[26] (bypass:1) dfgNode: 4 at cycle 8
+[DEBUG] occupy link[26]-->[25] (bypass:1) dfgNode: 4 at cycle 9
+[DEBUG] in allocateReg() t_cycle: 10; i: 0 CGRA node: 24; link: 3 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[25]-->[24] (bypass:0) dfgNode: 4 at cycle 10
+[DEBUG] skip predecessor routing -- dfgNode: 4
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[6] onto fu[18] at cycle 20 within II: 4
+[DEBUG] setDFGNode 6 onto CGRANode 18 at cycle: 20
+[cheng] synced for node: 12; check synced: 1; addr: 0x123e08b20
+[cheng] synced for node: 13; check synced: 1; addr: 0x123e08c50
+[cheng] synced for node: 18; check synced: 1; addr: 0x123e09240
+[cheng] synced for node: 19; check synced: 1; addr: 0x123e09370
+[DEBUG] in allocateReg() t_cycle: 14; i: 0 CGRA node: 18; link: 1 duration 2
+[DEBUG] done reg allocation
+[DEBUG] occupy link[12]-->[18] (bypass:0) dfgNode: 3 at cycle 14
+[DEBUG] skip predecessor routing -- dfgNode: 3
+[DEBUG] tryToRoute -- srcDFGNode: 5, srcCGRANode: 24; dstDFGNode: 6, dstCGRANode: 18; backEdge: 0
+[DEBUG] check route size: 2
+[DEBUG] reset duration: 2 t_dstCycle: 20 previous: 14 II: 4
+[DEBUG] in allocateReg() t_cycle: 14; i: 1 CGRA node: 18; link: 0 duration 2
+[DEBUG] done reg allocation
+[DEBUG] occupy link[24]-->[18] (bypass:0) dfgNode: 5 at cycle 14
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[7] onto fu[20] at cycle 26 within II: 4
+[DEBUG] setDFGNode 7 onto CGRANode 20 at cycle: 26
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 23; i: 0 CGRA node: 19; link: 2 duration 3
+[DEBUG] done reg allocation
+[DEBUG] occupy link[18]-->[19] (bypass:0) dfgNode: 6 at cycle 23
+[DEBUG] in allocateReg() t_cycle: 25; i: 0 CGRA node: 20; link: 2 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[19]-->[20] (bypass:0) dfgNode: 6 at cycle 25
+[DEBUG] skip predecessor routing -- dfgNode: 6
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[1] onto fu[14] at cycle 27 within II: 4
+[DEBUG] setDFGNode 1 onto CGRANode 14 at cycle: 27
+[cheng] synced for node: 14; check synced: 1; addr: 0x123e08d80
+[cheng] synced for node: 15; check synced: 1; addr: 0x123e08eb0
+[cheng] synced for node: 20; check synced: 1; addr: 0x123e094a0
+[cheng] synced for node: 21; check synced: 1; addr: 0x123e095d0
+[DEBUG] in allocateReg() t_cycle: 26; i: 0 CGRA node: 14; link: 0 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[20]-->[14] (bypass:0) dfgNode: 7 at cycle 26
+[DEBUG] skip predecessor routing -- dfgNode: 7
+[DEBUG] tryToRoute -- srcDFGNode: 11, srcCGRANode: 21; dstDFGNode: 1, dstCGRANode: 14; backEdge: 0
+[DEBUG] in shareSameCycle is true: node 1
+[DEBUG] check route size: 3
+[DEBUG] occupy link[21]-->[15] (bypass:1) dfgNode: 11 at cycle 2
+[DEBUG] reset duration: 0 t_dstCycle: 27 previous: 3 II: 4
+[DEBUG] reset duration is 0...
+[DEBUG] in allocateReg() t_cycle: 3; i: 1 CGRA node: 14; link: 3 duration 4
+[DEBUG] done reg allocation
+[DEBUG] occupy link[15]-->[14] (bypass:0) dfgNode: 11 at cycle 3
+[DEBUG] in shareSameCycle is true: node 1
+[DEBUG] tryToRoute -- srcDFGNode: 1, srcCGRANode: 14; dstDFGNode: 7, dstCGRANode: 20; backEdge: 1
+[DEBUG] in shareSameCycle is true: node 7
+[DEBUG] check route size: 2
+[DEBUG] reset duration: 3 t_dstCycle: 26 previous: 27 II: 4
+[DEBUG] in allocateReg() t_cycle: 27; i: 1 CGRA node: 20; link: 1 duration 3
+[DEBUG] done reg allocation
+[DEBUG] occupy link[14]-->[20] (bypass:0) dfgNode: 1 at cycle 27
+[DEBUG] success in schedule()
+[DEBUG] schedule dfg node[8] onto fu[6] at cycle 31 within II: 4
+[DEBUG] setDFGNode 8 onto CGRANode 6 at cycle: 31
+[cheng] synced for node: 0; check synced: 1; addr: 0x123e07ce0
+[cheng] synced for node: 1; check synced: 1; addr: 0x123e07e10
+[cheng] synced for node: 6; check synced: 1; addr: 0x123e08400
+[cheng] synced for node: 7; check synced: 1; addr: 0x123e08530
+[DEBUG] occupy link[20]-->[14] (bypass:1) dfgNode: 7 at cycle 26
+[DEBUG] in allocateReg() t_cycle: 27; i: 0 CGRA node: 8; link: 0 duration 0
+[DEBUG] done reg allocation
+[DEBUG] occupy link[14]-->[8] (bypass:0) dfgNode: 7 at cycle 27
+[DEBUG] occupy link[8]-->[7] (bypass:1) dfgNode: 7 at cycle 29
+[DEBUG] in allocateReg() t_cycle: 30; i: 0 CGRA node: 6; link: 3 duration 1
+[DEBUG] done reg allocation
+[DEBUG] occupy link[7]-->[6] (bypass:0) dfgNode: 7 at cycle 30
+[DEBUG] skip predecessor routing -- dfgNode: 7
+[DEBUG] success in schedule()
+Mapping algorithm elapsed time=74ms
+--------------------------- cycle:0 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:1 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:2 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [     ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:3 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[     ]   [     ]   [     ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:4 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:5 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:6 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [     ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:7 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[     ]   [     ]   [     ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:8 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:9 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:10 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [     ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:11 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [     ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:12 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:13 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:14 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [     ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:15 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [     ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:16 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:17 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:18 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [     ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:19 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [     ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:20 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:21 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:22 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [     ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:23 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [     ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:24 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:25 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:26 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:27 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:28 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:29 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:30 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:31 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:32 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:33 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:34 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:35 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:36 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:37 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:38 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:39 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:40 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:41 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:42 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:43 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:44 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:45 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:46 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:47 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:48 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:49 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:50 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:51 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:52 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:53 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:54 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:55 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:56 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:57 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:58 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:59 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:60 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:61 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:62 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:63 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:64 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:65 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:66 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:67 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:68 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:69 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [  4  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üí [     ]   [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[     ]   [     ] ‚Üê [     ]   [ 10  ]   [     ]   [     ]
+                                                       
+[     ]   [     ] ‚Üê [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:70 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+   ‚Üì                                                   
+[     ]   [     ]   [  7  ]   [ 11  ]   [     ]   [     ]
+   ‚Üë                   ‚Üì         ‚Üì                     
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üê [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:71 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[  5  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ] ‚Üí [     ]   [     ]   [     ]   [     ]   [     ]
+                       ‚Üë         ‚Üë                     
+[  3  ]   [     ]   [  1  ] ‚Üê [  0  ]   [     ]   [     ]
+                       ‚Üì         ‚áÖ                     
+[  8  ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+--------------------------- cycle:72 ---------------------------
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                 ‚Üë                     
+[  6  ]   [     ]   [     ]   [  9  ]   [     ]   [     ]
+                                 ‚Üì                     
+[     ]   [     ]   [     ] ‚Üê [     ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [  2  ]   [     ]   [     ]
+                                                       
+[     ]   [     ]   [     ]   [     ]   [     ]   [     ]
+[Mapping II: 4]
+[Mapping Success]
+==================================
+[Utilization & DVFS stats]
+tile avg fu utilization: 46.875%; avg xbar utilization: 68.75%; avg overall utilization: 275%
+max overall utilization: 400%
+histogram 0% tile utilization: 20
+histogram (0%, 25%] tile utilization: 6
+histogram (25%, 50%] tile utilization: 0
+histogram (50%, 100%] tile utilization: 10
+tile 0 DVFS frequency level: 0%
+tile 1 DVFS frequency level: 0%
+tile 2 DVFS frequency level: 0%
+tile 3 DVFS frequency level: 0%
+tile 4 DVFS frequency level: 0%
+tile 5 DVFS frequency level: 0%
+tile 6 DVFS frequency level: 25%
+tile 7 DVFS frequency level: 25%
+tile 8 DVFS frequency level: 25%
+tile 9 DVFS frequency level: 25%
+tile 10 DVFS frequency level: 0%
+tile 11 DVFS frequency level: 0%
+tile 12 DVFS frequency level: 25%
+tile 13 DVFS frequency level: 25%
+tile 14 DVFS frequency level: 100%
+tile 15 DVFS frequency level: 100%
+tile 16 DVFS frequency level: 0%
+tile 17 DVFS frequency level: 0%
+tile 18 DVFS frequency level: 25%
+tile 19 DVFS frequency level: 25%
+tile 20 DVFS frequency level: 100%
+tile 21 DVFS frequency level: 100%
+tile 22 DVFS frequency level: 0%
+tile 23 DVFS frequency level: 0%
+tile 24 DVFS frequency level: 25%
+tile 25 DVFS frequency level: 25%
+tile 26 DVFS frequency level: 25%
+tile 27 DVFS frequency level: 25%
+tile 28 DVFS frequency level: 0%
+tile 29 DVFS frequency level: 0%
+tile 30 DVFS frequency level: 0%
+tile 31 DVFS frequency level: 0%
+tile 32 DVFS frequency level: 0%
+tile 33 DVFS frequency level: 0%
+tile 34 DVFS frequency level: 0%
+tile 35 DVFS frequency level: 0%
+tile average DVFS frequency level: 19.4444%
+histogram 0% tile DVFS frequency ratio: 20
+histogram 25% tile DVFS frequency ratio: 12
+histogram 50% tile DVFS frequency ratio: 0
+histogram 100% tile DVFS frequency ratio: 4
+==================================
+[DEBUG] inside roi for CGRA node 14...
+[DEBUG] inside roi for CGRA node 26...
+[DEBUG] inside roi for CGRA node 7...
+[DEBUG] inside roi for CGRA node 13...
+[DEBUG] inside roi for CGRA node 25...
+[DEBUG] inside roi for CGRA node 14...
+[DEBUG] inside roi for CGRA node 15...
+[DEBUG] inside roi for CGRA node 15...
+[DEBUG] inside roi for CGRA node 21...
+[DEBUG] inside roi for CGRA node 14...
+[DEBUG] inside roi for CGRA node 26...
+[Output Json]
+[Output Json for Incremental Mapping]
+==================================
+ﬁ¿       |  ˇˇˇˇBC¿ﬁ5     b0$JYæ¶]˚µœQÄL   !  v  !    "   Å#ëA»I29íÑ%ãbÄEBíBÑ28K
+2BàH∞d!CÜàG2B$q»$)@ÜåK2dÑí #DàÂ !B*(*êQ\ #π@Ü√ÀBåå$2b,9»ê#»à:dDG»"CF â      "f≤BÇ	RBÇ	ëq¬PH
+	&D∆BB&öHêò# ÉÃ@!
+ R`Ê@a
+`é     Q    Í%¯ˇˇˇˇ0¿ 8 ˛ ê -∞¯AAÖ ¬‰!⁄°⁄ ﬁ!‹Å A wxwhv(áp0ÄpáwhzêápÄxHw8á6háp†t ËAÍ° bË!∆a⁄ ‰·Ë°∆ÅﬁA⁄@Í¡Ã°‰°Ê!Ù° < zy8ár†á6x® ‡ÿ°⁄†‚  Ë!‰· Å⁄¿ !Ë°‰°ÊXÉp(áy`É5v†w–áq∞6XÉqrÄ6XÉqát |`É5áqÄx`É5áwhx`|pázh6XÉqêáq`É5 át†6XrxzÄyxr`É50vásh6XsÄá6yh{¿6XsÄá8∞shv`É50x†áwHw†6Xs®v`sÄá8∞6Xuòáqxw∞6Xvòár`É5párxw`É5Äáp®z@6Xx(y0ávxw`É5Äy(rêárò6Xyáy`É5êáqÄáq`É5êrh6XÉy6XÉy@ápê6XÉy@ápò6XÉyÄáry(áy†yHáq†6XÉyòqò6X{¿7àÉp`É5∞<p96X{¿7òÉp`É5∞<p:6X{¿Ép 6 ê¬Üz˛ˇˇˇ L Ä? $@laAAA!ÉÄ0yáv(á6ÄáwHw†árê¿ﬁ¡⁄Ä !Ã ‹·⁄Ä‰!‡“¡Œ°⁄!Ë zêáz(ÄòzáqXá6Äyxz(áq†áwêá6áz0s(yhÉyH}(  Ç¬AŒ°Ë°∆ÍxÄv(á6há8 zy8ár†á60árz®y(áy ÷  aÿ`¬ÅË¡ÙaÏÅ÷`∆Å‡Å÷`∆!»ÿ`∆a‡ÿ`∆·⁄ÿ‹°⁄Å÷`‰aÿ`»!ËÅ÷ÄﬁÅ‡AﬁÅÿ`ÃÅ¬·⁄Å÷¿‡°¬A⁄¡Ä÷¿‡!Ï¿⁄Åÿ`ÃË·“¡ËÅ÷¿ÍÅÿ¡‡!ÏÄ÷@Êaﬁ¡ÏÅ÷ÄÊ°ÿ`‹°ﬁ¡ÿ`‡!ÍÅ–Å÷  AÃ°ﬁ¡ÿ`‡A Å‰°ÊÅ÷@¬aÿ`‰a‡aÿ`‰Å⁄Å÷`ƒÅ÷`–!‰Ä÷`–!ÊÄ÷`‡°∆A aËA“aËÅ÷`ÊAÊÅ÷¿¿‚ ÿ`Ï‹@¬Å÷¿¿Ê ÿ`Ï‹Ä¬Å÷¿ Ä	 § TÅ9 éB H!0`Cb ) U`    I     Ñ@ò@Da    ∞pêáv∞:hÉpÄx`árhÉváqxáy¿á8†7Ä7ÄÉßPm–zm rpp†s z0r– wz0r†s m rpr†v@z`t–È`t†v@mêq x†q x–Ó0r†v@m0q x–¶‡s JAÜå4BVQà®!_xûPÇ     @ ¿™0¡      †  `µ0Çp      P  0§∫ Ä   @     † ÜT€c           ÄƒÅ¬z  Y   0   2òLêå	&G∆CíÄ±¿ A˝@˘A¡@·Aê˛@Ip A‘?AÙA‰?¡@Cp AÑ?A˙A$¡APˇ@—Aêˇ@O0 A¡A˛@ÈAêA˝AD?A˛A<¡ A0A¯A§?A@ıè¶«úÇ¶
+°  År  ±  –   3Äƒ·f=àC8Ñ√åBÄyxsòqÊ ÌÙÄ3B¬¡Œ°f0=àC8ÑÉÃ=»C=å=Ãxåtp{yHáppzpvxáp áÃÏê·0n0„P3ƒﬁ!ÿ!¬af0â;ºÉ;–C9¥<ºÉ<Ñ;Ãv`{h7hárh7Äápêáp`v(v¯vxáwÄá_áqáròáyòÅ,ÓÓ‡ı¿Ï0b»°‰°Ã°‰°‹a !ƒÅ a÷êC9»C9òC9»C9∏√8îC8à;î√/ºÉ<¸Ç;‘;∞√«iápXárpÉthx`átát†áŒSÓ ÚP‰ê„@· ÏP3 (‹¡¬A“!‹Å‹‡‰·ÍfQ8∞C:úÉ;ÃP$v`{h7`áwxxòQLÙêP3j aË!ﬁ¡~‰°Ã!aTÖÉ8Ã√;∞C=–C9¸¬<‰C;à√;∞√å≈
+áyòáwátz(ròÅ\„Ï¿ÂPÛ0#¡“A‰·ÿ·ﬁfH;∞É=¥ÉÑ√8åC9Ã√<∏¡9»√;‘<ÃH¥qv`qáqXá€∆Ï`Ì‡ Â0Â ˆPn„0Â0Û‡È‡‰P¯0#‚Ïa¬Åÿ·Ï!Ê!ƒ!ÿ!Ë!f ù;ºC=∏9îÉ9ÃXºppwxzzHáwpáÀÁÔ0·‡È@È†Â0√s®wá_òáppát†át–áròÅÑA9‡√8∞C=êC9Ã@ƒ† °‡Aﬁ¡f$c0·¿Ï0È@Â0C!ÉusHá_†á|Äárò±î<å√<î√8–C:ºÉ;Ã√å≈H!BaÊ!Œ¡RÅfLg0Ô Ô‡ÔPÙ0È@Â‡Ê ·–Â0£@ÉvhyáR∏√;Ñ;§C8ÃÉÑ9êÉ<Ã<Ñ√8î√G–°¬¬Åÿ·∆a“Å  y   S   íH Cà	dd»… Åå2FFFÅB†êÒƒ»9BÜå‚¬∞  ãíMW<èÖ   SDK Versionwchar_sizePIC Leveluwtableframe-pointerHomebrew clang version 21.1.8floatomnipotent charSimple C++ TBAAllvm.loop.mustprogressllvm.loop.unroll.disable#√1ÇÄ #C2Ç0(#√2Ç00#I3≈0yﬂ43éÃ0@3√ŒCT83∆A2√Äh“√±I3'Õ(3ãå&(#66ª6ó∂7≤:∂23∂∞≥πQäâ™¨+66ª6ó4≤27∫Q    ©  -   
+r(áwÄzXpòC=∏√8∞C9–√ÇÊ∆°ËA¬¡Ê!Ë!ﬁ¡4„`ÁP· ‰@· ÁPÙ∞ÄÅy(áp`vxáqz(rXpú√8¥;§É=î√kÿ!‹·‹ ‰a‹ ËÅ¬a–°»a¬Åÿa¡Ù ·PÙÄàusHáœ8ºÉ;ÿC9»√9îÉ;åC9å=»;    —     Ã<§É;ú;î=†É<îC8ê√   a(     #Ü∞@      î%P@4#  ä·ÇâD¡ÄäÄ ö >J Aå¯(Ç1–2H2`¿'AŸÜ—ò 1      [ ‡∂E¿méÄ€20í¥eh   Ab     Ü –        a(  !   #Ü∞@      î%P@    Ñà·ÇâD¡ÄäÄ ö >D Aå¯Ç1–2(M0≤¿Ä	A¿ƒ       [ ‡∂E¿méÄ€2(∑eh$	   Ab     Ü ÿPÜ x&       q      2"Ñ∑Hpm     e  7   î∞      *      L      X       X      –       0      H   
+          –                  R            ˇˇˇˇ $  W            ˇˇˇˇ $  g             ˇˇˇˇ   m            ˇˇˇˇ   t            ˇˇˇˇ       ]  $   î!   inputoutputcoefficientsmain_Z6kernelPfS_S_21.1.8arm64-apple-macosx14.0.0kernel.cpp_main__Z6kernelPfS_S__input_output_coefficients       
