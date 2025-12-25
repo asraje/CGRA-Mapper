@@ -31,19 +31,6 @@ add_library(mapperPass MODULE
 # Link against OpenMP
 target_link_libraries(mapperPass PRIVATE OpenMP::OpenMP_CXX)
 
-# Link against LLVM libraries (required for Linux, optional for macOS)
-# Get the LLVM libraries needed for our pass
-llvm_map_components_to_libnames(llvm_libs support core analysis)
-if(NOT APPLE)
-    # On Linux, we need to explicitly link against LLVM libraries
-    target_link_libraries(mapperPass PRIVATE ${llvm_libs})
-endif()
-
-# Use C++11 to compile our pass (i.e., supply -std=c++11).
-#if (NOT CMAKE_VERSION VERSION_LESS 3.1)
-#  target_compile_features(mapperPass PRIVATE cxx_range_for cxx_auto_type)
-#endif ()
-
 # LLVM is (typically) built with no C++ RTTI. We need to match that;
 # otherwise, we'll get linker errors about missing RTTI data.
 set_target_properties(mapperPass PROPERTIES
@@ -51,9 +38,17 @@ set_target_properties(mapperPass PROPERTIES
 )
 
 # Get proper shared-library behavior (where symbols are not necessarily
-# resolved when the shared library is linked) on OS X.
+# resolved when the shared library is linked).
+# For pass plugins, we do NOT link against LLVM libraries directly -
+# the symbols are provided by the host tool (opt, clang, etc.)
 if(APPLE)
     set_target_properties(mapperPass PROPERTIES
         LINK_FLAGS "-undefined dynamic_lookup"
     )
-endif(APPLE)
+else()
+    # On Linux, allow unresolved symbols - they will be resolved at runtime
+    # when the plugin is loaded into opt/clang
+    set_target_properties(mapperPass PROPERTIES
+        LINK_FLAGS "-Wl,--unresolved-symbols=ignore-in-object-files"
+    )
+endif()
